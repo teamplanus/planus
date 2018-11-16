@@ -14,14 +14,14 @@ func NewBlockchain() *Blockchain {
 	return &Blockchain{[]*Block{NewGenesisBlock()}}
 }
 
-// AddBlock adds the block into blockchain received from other peers
+// AddBlock adds the block into blockchain
 func (blockchain *Blockchain) AddBlock(block *Block) {
 	if (blockchain.isValidBlock(block)) {
 		blockchain.blocks = append(blockchain.blocks, block)
 	}
 }
 
-// CreateBlock creates a new block
+// CreateBlock creates a new block and returns it
 func (blockchain *Blockchain) CreateBlock(data string) *Block {
 	return NewBlock(
 		blockchain.GetLatestBlockNumber() + 1,
