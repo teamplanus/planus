@@ -9,15 +9,15 @@ type Block struct {
 	Data			string	// FIXME It will be changed to some struct contains txs.
 }
 
-// CreateBlock creates and returns new block
-func CreateBlock(blockNumber uint64, previousHash []byte, data string) *Block {
+// NewBlock creates and returns new block
+func NewBlock(blockNumber uint64, previousHash []byte, data string) *Block {
 	// TODO
 	return &Block{}
 }
 
-// CreateGenesisBlock creates and returns genesis block
-func CreateGenesisBlock() *Block {
-	return CreateBlock(0, []byte{}, "Planus")
+// NewGenesisBlock creates and returns genesis block
+func NewGenesisBlock() *Block {
+	return NewBlock(0, []byte{}, "Planus")
 }
 
 // Serialize serializes block to byte array
