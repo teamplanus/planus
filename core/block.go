@@ -12,12 +12,12 @@ type Block struct {
 // NewBlock creates and returns new block
 func NewBlock(blockNumber uint64, previousHash []byte, data string) *Block {
 	// TODO
-	return &Block{}
+	return &Block{blockNumber, []byte{}, previousHash, 1234567890, data}
 }
 
 // NewGenesisBlock creates and returns genesis block
 func NewGenesisBlock() *Block {
-	return NewBlock(0, []byte{}, "Planus")
+	return NewBlock(0, []byte{}, "Planus Genesis Block")
 }
 
 // Serialize serializes block to byte array

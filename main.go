@@ -1,11 +1,14 @@
 package main
 
 import (
-	"log"
 	"./core"
 )
 
 func main() {
 	blockchain := core.NewBlockchain()
-	log.Println(blockchain.GetLastBlockNumber())
+	blockchain.AddBlock(blockchain.CreateBlock("New Block 1"))
+	blockchain.AddBlock(blockchain.CreateBlock("New Block 2"))
+	
+	// Test
+	blockchain.ShowBlockchainForDebug()
 }
